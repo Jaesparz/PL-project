@@ -1,0 +1,59 @@
+=== REPORTE DE ANALISIS LEXICO ===
+Archivo analizado: algoritmo_josue.rb
+Desarrollador: JosueEsparza
+Fecha de generacion: 22-06-2026-03h58
+
+--- TOKENS VALIDOS ---
+Linea 03 | Token: CONSTANTE       | Lexema: MAX_ROUNDS
+Linea 03 | Token: ASIGNACION      | Lexema: =
+Linea 03 | Token: INTEGER         | Lexema: 5
+Linea 04 | Token: VARIABLE_LOCAL  | Lexema: round_actual
+Linea 04 | Token: ASIGNACION      | Lexema: =
+Linea 04 | Token: INTEGER         | Lexema: 1
+Linea 05 | Token: VARIABLE_LOCAL  | Lexema: estamina
+Linea 05 | Token: ASIGNACION      | Lexema: =
+Linea 05 | Token: FLOAT           | Lexema: 100.0
+Linea 06 | Token: VARIABLE_LOCAL  | Lexema: peleador_listo
+Linea 06 | Token: ASIGNACION      | Lexema: =
+Linea 06 | Token: TRUE            | Lexema: true
+Linea 07 | Token: VARIABLE_LOCAL  | Lexema: error_intencional
+Linea 07 | Token: ASIGNACION      | Lexema: =
+Linea 07 | Token: NIL             | Lexema: nil
+Linea 09 | Token: PUTS            | Lexema: puts
+Linea 09 | Token: STRING          | Lexema: "Iniciando combate..."
+Linea 11 | Token: WHILE           | Lexema: while
+Linea 11 | Token: VARIABLE_LOCAL  | Lexema: round_actual
+Linea 11 | Token: MENOR_IGUAL     | Lexema: <=
+Linea 11 | Token: CONSTANTE       | Lexema: MAX_ROUNDS
+Linea 11 | Token: DO              | Lexema: do
+Linea 12 | Token: IF              | Lexema: if
+Linea 12 | Token: VARIABLE_LOCAL  | Lexema: estamina
+Linea 12 | Token: MAYOR_IGUAL     | Lexema: >=
+Linea 12 | Token: FLOAT           | Lexema: 20.0
+Linea 12 | Token: AND             | Lexema: &&
+Linea 12 | Token: VARIABLE_LOCAL  | Lexema: peleador_listo
+Linea 12 | Token: IGUAL_QUE       | Lexema: ==
+Linea 12 | Token: TRUE            | Lexema: true
+Linea 13 | Token: VARIABLE_LOCAL  | Lexema: estamina
+Linea 13 | Token: ASIGNACION      | Lexema: =
+Linea 13 | Token: VARIABLE_LOCAL  | Lexema: estamina
+Linea 13 | Token: MENOS           | Lexema: -
+Linea 13 | Token: FLOAT           | Lexema: 15.5
+Linea 14 | Token: PUTS            | Lexema: puts
+Linea 14 | Token: STRING          | Lexema: "Golpe conectado"
+Linea 15 | Token: ELSE            | Lexema: else
+Linea 16 | Token: VARIABLE_LOCAL  | Lexema: estamina
+Linea 16 | Token: ASIGNACION      | Lexema: =
+Linea 16 | Token: VARIABLE_LOCAL  | Lexema: estamina
+Linea 16 | Token: MAS             | Lexema: +
+Linea 16 | Token: FLOAT           | Lexema: 10.0
+Linea 17 | Token: END             | Lexema: end
+Linea 18 | Token: VARIABLE_LOCAL  | Lexema: round_actual
+Linea 18 | Token: ASIGNACION      | Lexema: =
+Linea 18 | Token: VARIABLE_LOCAL  | Lexema: round_actual
+Linea 18 | Token: MAS             | Lexema: +
+Linea 18 | Token: INTEGER         | Lexema: 1
+Linea 19 | Token: END             | Lexema: end
+
+--- ERRORES LEXICOS ---
+Linea 7: Caracter no valido '@'

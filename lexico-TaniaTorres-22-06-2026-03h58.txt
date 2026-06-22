@@ -1,0 +1,49 @@
+=== REPORTE DE ANALISIS LEXICO ===
+Archivo analizado: algoritmo_tania.rb
+Desarrollador: TaniaTorres
+Fecha de generacion: 22-06-2026-03h58
+
+--- TOKENS VALIDOS ---
+Linea 03 | Token: CONSTANTE       | Lexema: CODIGO_ZONA
+Linea 03 | Token: ASIGNACION      | Lexema: =
+Linea 03 | Token: INTEGER         | Lexema: 593
+Linea 04 | Token: VARIABLE_LOCAL  | Lexema: rango_busqueda
+Linea 04 | Token: ASIGNACION      | Lexema: =
+Linea 04 | Token: INTEGER         | Lexema: 1
+Linea 04 | Token: RANGO           | Lexema: ..
+Linea 04 | Token: INTEGER         | Lexema: 5
+Linea 05 | Token: VARIABLE_LOCAL  | Lexema: inventario
+Linea 05 | Token: ASIGNACION      | Lexema: =
+Linea 05 | Token: CORCHETE_IZQ    | Lexema: [
+Linea 05 | Token: INTEGER         | Lexema: 10
+Linea 05 | Token: COMA            | Lexema: ,
+Linea 05 | Token: INTEGER         | Lexema: 20
+Linea 05 | Token: COMA            | Lexema: ,
+Linea 05 | Token: INTEGER         | Lexema: 30
+Linea 05 | Token: COMA            | Lexema: ,
+Linea 05 | Token: INTEGER         | Lexema: 40
+Linea 05 | Token: CORCHETE_DER    | Lexema: ]
+Linea 06 | Token: VARIABLE_LOCAL  | Lexema: variable_erronea
+Linea 06 | Token: ASIGNACION      | Lexema: =
+Linea 06 | Token: INTEGER         | Lexema: 100
+Linea 08 | Token: DEF             | Lexema: def
+Linea 08 | Token: VARIABLE_LOCAL  | Lexema: verificar_stock
+Linea 09 | Token: WHILE           | Lexema: while
+Linea 09 | Token: CONSTANTE       | Lexema: CODIGO_ZONA
+Linea 09 | Token: MENOR           | Lexema: <
+Linea 09 | Token: INTEGER         | Lexema: 600
+Linea 09 | Token: DO              | Lexema: do
+Linea 10 | Token: PUTS            | Lexema: puts
+Linea 10 | Token: STRING          | Lexema: "Verificando zona..."
+Linea 11 | Token: VARIABLE_LOCAL  | Lexema: codigo_busqueda
+Linea 11 | Token: ASIGNACION      | Lexema: =
+Linea 11 | Token: INTEGER         | Lexema: 1
+Linea 12 | Token: END             | Lexema: end
+Linea 13 | Token: RETURN          | Lexema: return
+Linea 13 | Token: NIL             | Lexema: nil
+Linea 14 | Token: END             | Lexema: end
+Linea 16 | Token: PUTS            | Lexema: puts
+Linea 16 | Token: STRING          | Lexema: "Inventario cargado exitosamente"
+
+--- ERRORES LEXICOS ---
+Linea 6: Caracter no valido '$'

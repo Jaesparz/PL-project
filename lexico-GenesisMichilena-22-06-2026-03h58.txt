@@ -1,0 +1,58 @@
+=== REPORTE DE ANALISIS LEXICO ===
+Archivo analizado: algoritmo_genesis.rb
+Desarrollador: GenesisMichilena
+Fecha de generacion: 22-06-2026-03h58
+
+--- TOKENS VALIDOS ---
+Linea 03 | Token: VARIABLE_LOCAL  | Lexema: nota_final
+Linea 03 | Token: ASIGNACION      | Lexema: =
+Linea 03 | Token: FLOAT           | Lexema: 85.5
+Linea 04 | Token: VARIABLE_LOCAL  | Lexema: estado
+Linea 04 | Token: ASIGNACION      | Lexema: =
+Linea 04 | Token: STRING          | Lexema: "Aprobado"
+Linea 05 | Token: VARIABLE_LOCAL  | Lexema: estudiante
+Linea 05 | Token: ASIGNACION      | Lexema: =
+Linea 05 | Token: LLAVE_IZQ       | Lexema: {
+Linea 05 | Token: STRING          | Lexema: "nombre"
+Linea 05 | Token: ASIGNACION_HASH | Lexema: =>
+Linea 05 | Token: STRING          | Lexema: "Carlos"
+Linea 05 | Token: COMA            | Lexema: ,
+Linea 05 | Token: STRING          | Lexema: "edad"
+Linea 05 | Token: ASIGNACION_HASH | Lexema: =>
+Linea 05 | Token: INTEGER         | Lexema: 20
+Linea 05 | Token: LLAVE_DER       | Lexema: }
+Linea 06 | Token: VARIABLE_LOCAL  | Lexema: simbolo_invalido
+Linea 06 | Token: ASIGNACION      | Lexema: =
+Linea 06 | Token: FALSE           | Lexema: false
+Linea 08 | Token: DEF             | Lexema: def
+Linea 08 | Token: VARIABLE_LOCAL  | Lexema: calcular_promedio
+Linea 09 | Token: VARIABLE_LOCAL  | Lexema: suma
+Linea 09 | Token: ASIGNACION      | Lexema: =
+Linea 09 | Token: INTEGER         | Lexema: 80
+Linea 09 | Token: MAS             | Lexema: +
+Linea 09 | Token: INTEGER         | Lexema: 90
+Linea 10 | Token: VARIABLE_LOCAL  | Lexema: promedio
+Linea 10 | Token: ASIGNACION      | Lexema: =
+Linea 10 | Token: VARIABLE_LOCAL  | Lexema: suma
+Linea 10 | Token: DIVIDIDO        | Lexema: /
+Linea 10 | Token: INTEGER         | Lexema: 2
+Linea 11 | Token: RETURN          | Lexema: return
+Linea 11 | Token: VARIABLE_LOCAL  | Lexema: promedio
+Linea 12 | Token: END             | Lexema: end
+Linea 14 | Token: IF              | Lexema: if
+Linea 14 | Token: VARIABLE_LOCAL  | Lexema: nota_final
+Linea 14 | Token: MAYOR_IGUAL     | Lexema: >=
+Linea 14 | Token: INTEGER         | Lexema: 60
+Linea 14 | Token: OR              | Lexema: ||
+Linea 14 | Token: VARIABLE_LOCAL  | Lexema: estado
+Linea 14 | Token: DIFERENTE       | Lexema: !=
+Linea 14 | Token: STRING          | Lexema: "Reprobado"
+Linea 15 | Token: PUTS            | Lexema: puts
+Linea 15 | Token: STRING          | Lexema: "Materia aprobada"
+Linea 16 | Token: ELSE            | Lexema: else
+Linea 17 | Token: PUTS            | Lexema: puts
+Linea 17 | Token: STRING          | Lexema: "Necesita refuerzo"
+Linea 18 | Token: END             | Lexema: end
+
+--- ERRORES LEXICOS ---
+Linea 6: Caracter no valido '?'

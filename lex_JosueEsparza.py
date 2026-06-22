@@ -1,5 +1,5 @@
 # PARTE DE JOSUE
-from tania_lex import reserved
+from lex_Tania import reserved
 
 tokens_josue = [
     'CONSTANTE', 'VARIABLE_LOCAL', 'FLOAT', 'INTEGER', 'STRING'
