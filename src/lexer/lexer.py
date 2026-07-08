@@ -9,7 +9,8 @@ errores_lexicos = []
 reserved = {
     'if': 'IF', 'else': 'ELSE', 'while': 'WHILE', 'do': 'DO',
     'end': 'END', 'def': 'DEF', 'return': 'RETURN', 'puts': 'PUTS',
-    'gets': 'GETS', 'nil': 'NIL', 'false': 'FALSE', 'true': 'TRUE'
+    'gets': 'GETS', 'nil': 'NIL', 'false': 'FALSE', 'true': 'TRUE',
+    'for': 'FOR', 'in': 'IN'
 }
 
 tokens_tania = [

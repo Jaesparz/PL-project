@@ -1,7 +1,7 @@
 === REPORTE DE ANALISIS LEXICO ===
 Archivo analizado: algoritmo_tania.rb
 Desarrollador: TaniaTorres
-Fecha de generacion: 08-07-2026-23h36
+Fecha de generacion: 08-07-2026-23h50
 
 --- TOKENS VALIDOS ---
 Linea 03 | Token: CONSTANTE       | Lexema: CODIGO_ZONA
@@ -46,4 +46,5 @@ Linea 16 | Token: PUTS            | Lexema: puts
 Linea 16 | Token: STRING          | Lexema: "Inventario cargado exitosamente"
 
 --- ERRORES LEXICOS ---
+Linea 6: Caracter no valido '$'
 Linea 6: Caracter no valido '$'
