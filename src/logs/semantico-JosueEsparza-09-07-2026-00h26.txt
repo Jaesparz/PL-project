@@ -1,0 +1,10 @@
+=== REPORTE DE ANALISIS SEMANTICO ===
+Archivo analizado: algoritmo_josue.rb
+Desarrollador: JosueEsparza
+Fecha de generacion: 09-07-2026-00h26
+
+--- RESULTADO DEL ANALISIS ---
+Se encontraron 2 errores semanticos:
+
+Linea 12: Error Semantico - La variable 'estamina' no ha sido declarada antes de usarse.
+Linea 13: Error Semantico - La variable 'estamina' no ha sido declarada antes de usarse.

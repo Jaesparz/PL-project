@@ -1,7 +1,7 @@
 === REPORTE DE ANALISIS SEMANTICO ===
-Archivo analizado: algoritmo_josue.rb
-Desarrollador: JosueEsparza
-Fecha de generacion: 09-07-2026-00h06
+Archivo analizado: algoritmo_genesis.rb
+Desarrollador: GenesisMichilena
+Fecha de generacion: 09-07-2026-00h26
 
 --- RESULTADO DEL ANALISIS ---
 Coherencia de variables correcta. Ningun error semantico encontrado.

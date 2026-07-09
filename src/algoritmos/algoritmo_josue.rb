@@ -5,7 +5,7 @@ Utiliza variables, condicionales y ciclos con diferentes operadores
 
 MAX_ROUNDS = 5
 round_actual = 1
-estamina = 100.0
+estamina = 200
 peleador_listo = true
 @error_intencional = nil # Dispara error lexico
 

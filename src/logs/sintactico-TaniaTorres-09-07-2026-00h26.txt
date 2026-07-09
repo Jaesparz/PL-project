@@ -1,7 +1,7 @@
 === REPORTE DE ANALISIS SINTACTICO ===
-Archivo analizado: algoritmo_josue.rb
-Desarrollador: JosueEsparza
-Fecha de generacion: 09-07-2026-00h06
+Archivo analizado: algoritmo_tania.rb
+Desarrollador: TaniaTorres
+Fecha de generacion: 09-07-2026-00h26
 
 --- RESULTADO DEL ANALISIS ---
 El codigo cumple con toda la sintaxis documentada. Ningun error encontrado.
