@@ -54,4 +54,4 @@ Todos los resultados, incluyendo los tokens exitosos, advertencias de estructura
 
 Desde la terminal, ejecuta el comando:
    ```bash
-   python tester.py
+   python interfaz.py
