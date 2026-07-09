@@ -1,5 +1,5 @@
-# MiniRuby Analyzer - Componente Léxico
-Este proyecto consiste en la implementación de un analizador léxico, sintáctico y semántico diseñado para procesar un subconjunto básico del lenguaje de programación **Ruby**. Actualmente, el repositorio contiene el primer avance del proyecto correspondiente a la fase del **Analizador Léxico**, capaz de escanear código fuente, identificar tokens válidos y reportar errores en la sintaxis de los caracteres.
+# MiniRuby Analyzer - Compilador Completo
+Este proyecto consiste en la implementación de un analizador léxico, sintáctico y semántico diseñado para procesar un subconjunto básico del lenguaje de programación Ruby. El repositorio contiene el compilador funcional capaz de escanear código fuente, estructurar lógicamente los componentes del lenguaje y validar su coherencia en un entorno con interfaz gráfica.
 
 ## Equipo de Desarrollo
 * **Josué Esparza** (@Jaesparz)
@@ -10,30 +10,37 @@ Este proyecto consiste en la implementación de un analizador léxico, sintácti
 
 ## Detalles de Implementación Técnica
 
-El analizador léxico fue desarrollado en **Python 3** utilizando la biblioteca **PLY (Python Lex-Yacc)**. La implementación se basa en el reconocimiento de patrones mediante **expresiones regulares (Regex)** para clasificar cadenas de texto en tokens significativos para el lenguaje Ruby.
+El compilador fue desarrollado en Python 3 utilizando la biblioteca PLY (Python Lex-Yacc) para las herramientas de construcción.
 
-### 1. Arquitectura Modular del Lexer
-Para optimizar el desarrollo colaborativo y evitar conflictos de control de versiones, el reconocimiento de tokens se dividió en tres módulos:
-* **`josue_lex.py`:** Implementa reglas léxicas para los **Identificadores** (variables locales y constantes) y **Tipos de Datos Primitivos** (números enteros, flotantes y cadenas de texto).
-* **`tania_lex.py`:** Define el diccionario de **Palabras Reservadas** (`if`, `while`, `def`, `puts`, etc.) y las expresiones regulares para todos los **Operadores** (aritméticos, lógicos, de asignación y relacionales).
-* **`genesis_lex.py`:** Configura el reconocimiento de **Delimitadores** (paréntesis, llaves, corchetes, comas, rangos) y define las reglas para ignorar los **Comentarios** (unilínea y multilínea).
+### 1. Arquitectura Final del Proyecto
+Para facilitar el uso del compilador, la arquitectura está definida por un sistema controlado por una Interfaz Gráfica de Usuario (GUI), manteniendo una estricta separación de responsabilidades en sus motores de análisis:
+- **Interfaz Gráfica (GUI):** Desarrollada con Tkinter, actúa como un panel de control central y minimalista. Mediante el botón "CORRER ALGORITMOS", invoca internamente al compilador para que procese automáticamente los archivos fuente .rb en segundo plano.
+- **Analizador Léxico:** Lee el código fuente y agrupa los caracteres en tokens válidos (palabras reservadas, identificadores, símbolos y delimitadores), identificando y aislando errores de escritura.
+- **Analizador Sintáctico:** Módulo independiente implementado con yacc que evalúa estrictamente que la secuencia de tokens generada por el lexer cumpla con las reglas gramaticales (la estructura correcta de declaraciones, ciclos, funciones, etc.).
+- **Analizador Semántico:** Componente separado encargado de garantizar la coherencia lógica del código. Utiliza una tabla de símbolos (tabla_simbolos) para gestionar la memoria y los contextos del programa, operando de manera independiente a la validación estructural.
 
-### 2. Implementación de los Algoritmos de Prueba (.rb)
-Para validar el analizador, se diseñaron tres scripts de prueba nativos en Ruby (`.rb`). La implementación de estos algoritmos siguió directrices estrictas:
-* **Cobertura de Tokens:** Cada archivo fue estructurado lógicamente para abarcar la mayor cantidad de componentes del lenguaje asignados a cada integrante (ciclos, hashes, rangos, comparaciones lógicas).
-* **Inyección de Errores Intencionales:** Para probar el mecanismo de excepciones del analizador (`t_error`), cada archivo implementa deliberadamente un símbolo ajeno a nuestro subconjunto de Ruby.
-    * **`algoritmo_josue.rb` (Simulador de Combate MMA):** Simula la estamina en un combate. *Error inyectado:* Símbolo `@` (Línea 10).
-    * **`algoritmo_genesis.rb` (Control de Calificaciones):** Evalúa el estado de aprobación mediante diccionarios y funciones. *Error inyectado:* Símbolo `?` (Línea 7).
-    * **`algoritmo_tania.rb` (Iterador de Inventario):** Búsquedas en arreglos usando ciclos y rangos. *Error inyectado:* Símbolo `$` (Línea 8).
+### 2. Fases del análisis
+1. **Análisis Léxico:** Valida que el texto pertenezca al vocabulario permitido de nuestro subconjunto de Ruby. Si detecta un símbolo desconocido (ej. caracteres ilegales), lo reporta y continúa el escaneo.
+2. **Análisis Sintáctico:** Verifica que la secuencia de tokens cumpla con las reglas gramaticales. Valida la estructura correcta de:
+Declaración de variables y asignaciones.
+Expresiones aritméticas y lógicas (respetando la precedencia de operadores).
+Estructuras de control (if, while, for) y sus cierres obligatorios con end.
+Estructuras de datos complejas (Arreglos, Hashes y Rangos).
+Declaración e invocación de funciones, así como la entrada/salida de datos (puts, gets).
+3. **Análisis Semántico:** Garantiza la coherencia lógica del código validando reglas como:
+Identificadores: Verifica que toda variable o función exista y haya sido declarada en la tabla de símbolos antes de ser invocada o utilizada en una operación.
+Asignación de Tipo: Asegura que las constantes no sean modificadas tras su inicialización.
 
-### 3. Motor de Análisis y Generación de Logs (`tester.py`)
-El archivo `tester.py` no solo ensambla el lexer unificado importando los tres módulos anteriores, sino que actúa como un entorno de pruebas automatizado. Su funcionamiento interno es el siguiente:
+### 3. Implementación de los Algoritmos de Prueba (.rb)
+Para validar el sistema completo, se diseñaron scripts de prueba nativos en Ruby (.rb) en la carpeta correspondiente. Estos algoritmos están diseñados para disparar errores específicos:
+* **`algoritmo_josue.rb` (Simulador de Combate MMA):** Valida tipos de datos numéricos y booleanos, sentencias condicionales y ciclos iterativos.
+* **`algoritmo_genesis.rb` (Control de Calificaciones):** Pone a prueba la estructura de Hashes, declaración de funciones con parámetros y operadores lógicos.
+* **`algoritmo_tania.rb` (Iterador de Inventario):** Evalúa arreglos, rangos numéricos continuos y la interrupción de ciclos.
+#### ***Nota: Cada archivo contiene errores intencionales comentados. Al descomentarlos, se dispararán las alertas léxicas, sintácticas o semánticas correspondientes para demostrar el manejo de excepciones del compilador*** 
 
-1. **Limpieza de Entorno:** Utiliza la librería `glob` y el módulo `os` para buscar y eliminar dinámicamente cualquier archivo `lexico-*.txt` generado en ejecuciones anteriores, garantizando que no se acumule basura en el repositorio.
-2. **Validación de Integridad:** Antes de analizar, lee el archivo `.rb`. Si el archivo está vacío (ej. no se guardaron los cambios en el editor), lanza una advertencia en consola y detiene la creación de falsos positivos.
-3. **Escaneo de Tokens (`lexer.input`):** El código fuente se introduce en el motor de PLY. Un bucle `while` itera sobre `lexer.token()` para extraer secuencialmente cada componente validado, guardándolo en una lista temporal junto con su número de línea.
-4. **Manejo de Excepciones:** Si durante el escaneo se encuentra un carácter no definido en las Regex, se dispara la función `t_error()`, la cual guarda el mensaje de error en una variable global (`errores_lexicos`) y fuerza al lexer a saltar ese carácter para que el programa no colapse (`t.lexer.skip(1)`).
-5. **Escritura del Log:** Utilizando el módulo `datetime`, se genera un nombre de archivo único (`lexico-[Nombre]-[Fecha]-[Hora].txt`). El script abre este archivo en modo escritura (`'w'`) y formatea los arrays de tokens válidos y errores atrapados en un reporte de texto plano legible.
+### 4. Sistema de Retroalimentación y Logs
+El panel gráfico mantiene el entorno visual limpio apoyándose en alertas emergentes (Pop-ups). Una vez que el motor finaliza el análisis de los archivos, el sistema muestra un cuadro de diálogo confirmando la ejecución.
+Todos los resultados, incluyendo los tokens exitosos, advertencias de estructura y errores de lógica de las tres etapas, se empaquetan y exportan automáticamente en formato de texto plano dentro de la carpeta logs
 
 ---
 
