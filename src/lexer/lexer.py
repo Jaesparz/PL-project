@@ -3,9 +3,8 @@ import ply.lex as lex
 # Lista global para atrapar errores
 errores_lexicos = []
 
-# ==========================================
 # PARTE DE TANIA
-# ==========================================
+
 reserved = {
     'if': 'IF', 'else': 'ELSE', 'while': 'WHILE', 'do': 'DO',
     'end': 'END', 'def': 'DEF', 'return': 'RETURN', 'puts': 'PUTS',
@@ -36,9 +35,9 @@ t_POR = r'\*'
 t_DIVIDIDO = r'/'
 t_MODULO = r'%'
 
-# ==========================================
+
 # PARTE DE JOSUE
-# ==========================================
+
 tokens_josue = [
     'CONSTANTE', 'VARIABLE_LOCAL', 'FLOAT', 'INTEGER', 'STRING'
 ]
@@ -67,9 +66,9 @@ def t_VARIABLE_LOCAL(t):
     t.type = reserved.get(t.value, 'VARIABLE_LOCAL')
     return t
 
-# ==========================================
+
 # PARTE DE GENESIS
-# ==========================================
+
 tokens_genesis = [
     'PAREN_IZQ', 'PAREN_DER', 'CORCHETE_IZQ', 'CORCHETE_DER', 
     'LLAVE_IZQ', 'LLAVE_DER', 'COMA', 'ASIGNACION_HASH', 'RANGO'
@@ -93,9 +92,9 @@ def t_COMENTARIO_LINEA(t):
     r'\#.*'
     pass 
 
-# ==========================================
+
 # CONFIGURACIÓN GENERAL DE PLY
-# ==========================================
+
 tokens = tokens_tania + tokens_josue + tokens_genesis + list(reserved.values())
 
 t_ignore = ' \t'

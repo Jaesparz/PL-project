@@ -1,7 +1,7 @@
 === REPORTE DE ANALISIS LEXICO ===
 Archivo analizado: algoritmo_josue.rb
 Desarrollador: JosueEsparza
-Fecha de generacion: 08-07-2026-23h50
+Fecha de generacion: 09-07-2026-00h06
 
 --- TOKENS VALIDOS ---
 Linea 03 | Token: CONSTANTE       | Lexema: MAX_ROUNDS
@@ -56,5 +56,6 @@ Linea 18 | Token: INTEGER         | Lexema: 1
 Linea 19 | Token: END             | Lexema: end
 
 --- ERRORES LEXICOS ---
+Linea 7: Caracter no valido '@'
 Linea 7: Caracter no valido '@'
 Linea 7: Caracter no valido '@'
